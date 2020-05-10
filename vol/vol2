@@ -1,0 +1,23 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: volpod
+spec:
+  volumes:
+  - name: vol1
+    emptyDir: {}
+  containers:
+  - name: cont1
+    image: aamirpinger/logfile_nodejs
+    ports:
+    - containerPort: 8080
+    volumeMounts:
+    - name: vol1
+      mountPath: /data
+  - name: cont2
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: vol1
+      mountPath: /abc/xyz 

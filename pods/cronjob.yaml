@@ -1,0 +1,20 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: croncron
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: cronjob
+        spec:
+         containers:
+         - name: whale
+           image: docker/whalesay 
+           command: ["cowsay","This is me!"]
+         restartPolicy: Never
+      backoffLimit: 4
+      activeDeadlineSeconds: 600

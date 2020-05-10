@@ -1,0 +1,10 @@
+-apiVersion: v1
+-kind:Pod
+-matadata:
+  - name:abcpod
+-spec:
+  - containers:
+  - name:abc
+  - image:bscout
+-ports:
+  - containerPort: 80

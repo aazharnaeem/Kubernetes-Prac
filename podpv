@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: portpv
+spec:
+  volumes:
+  - name: usman1
+    persistentVolumeClaim:
+      claimName: pvcusman
+  containers:
+  - name: container1
+    image: aamirpinger/logfile_nodejs
+    ports:
+    - containerPort: 8080
+    volumeMounts:
+    - name: usman1
+      mountPath: /123

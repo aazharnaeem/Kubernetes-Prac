@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cmpod
+spec:
+  volumes:
+  - name: vol
+    configMap:
+      name: cm2
+  containers:
+  - name: cont1
+    image: aamirpinger/hi
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: vol
+      mountPath: /data/abc

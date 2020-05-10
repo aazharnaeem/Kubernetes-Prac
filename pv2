@@ -1,0 +1,12 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: pvpv
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 100M
+  persistentVolumeReclaimPolicy: Delete
+  hostPath:
+    path: /tmp/Ghouri

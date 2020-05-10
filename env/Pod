@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: envpod
+spec:
+  containers:
+  - name: cont3
+    image: aamirpinger/hi
+    imagePullPolicy: IfNotPresent
+    ports:
+    - containerPort: 8080
+    env:
+    - name: CREATEDBY
+      value: AZHAR

@@ -1,0 +1,25 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: mypod
+spec:
+  volumes:
+  - name: share-dir
+    emptyDir: {}
+  containers:
+  - name: container-one
+    image: aamirpinger/hi
+    ports:
+    - containerPort: 80
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: share-dir
+      mountPath: /var/c-one
+  - name: container-two
+    image: nginx
+    ports:
+    - containerPort: 80
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: share-dir
+      mountPath: /var/c-two

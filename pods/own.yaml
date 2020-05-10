@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ownpod
+  labels:
+    env: production
+    type: frontend
+spec:
+  containers:
+  - name: myfirst
+    image: aamirpinger/hi
+    ports:
+    - containerPort: 80
+    imagePullPolicy: IfNotPresent

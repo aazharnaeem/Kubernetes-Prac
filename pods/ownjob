@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ownjob
+spec:
+  template:
+    spec:
+      containers:
+      - name: whalesay1
+        image: docker/whalesay
+        command: ["coysay","This is new"]
+        imagePullPolicy: IfNotPresent
+      restartPolicy: Never
+  backoffLimit: 4
+  activeDeadlineSeconds: 60

@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: xyzpod
+  labels:
+    env: production
+    type: backend
+spec:
+  containers:
+  - name: cont1
+    image: aamirpinger/hi
+    ports:
+    - containerPort: 80
+    imagePullPolicy: IfNotPresent

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: persistenceVolumeClaim
+metadata:
+  name: pvc
+spec:
+  accesModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50M
+  storageClassName: abc
